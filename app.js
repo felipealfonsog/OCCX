@@ -1,9 +1,11 @@
 /*
  * Module dependencies
  */
-var express = require('express')
+const port = process.env.PORT || 3000;
+
+ var express = require('express')
   , stylus = require('stylus')
-  , nib = require('nib')
+  , nib = require('nib');
 
 
 var app = express()
@@ -30,4 +32,6 @@ app.get('/', function (req, res) {
   )
 })
 
-app.listen(3000)
+server.listen(port, () => {
+  console.log(`Server is up on ${port}`);
+});
