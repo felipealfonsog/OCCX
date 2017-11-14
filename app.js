@@ -1,14 +1,17 @@
 /*
  * Module dependencies
  */
-const port = process.env.PORT || 3000;
+
 
  var express = require('express')
   , stylus = require('stylus')
-  , nib = require('nib');
+  , nib = require('nib')
+  , http = require('http');
 
 
-var app = express()
+  const port = process.env.PORT || 3000;
+  var app = express();
+  var server = http.createServer(app);
 
 function compile(str, path) {
   return stylus(str)
